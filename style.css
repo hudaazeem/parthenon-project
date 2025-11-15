@@ -3,9 +3,15 @@ body {
     width:800px;
     height:500px;
     margin: 0 auto;
+    background-color: pink;
 }
 
 .hidden{
     display: none;
 }
 
+#drawingCanvas{
+    border: 2px solid blue;
+    width:400px; 
+    height:400px;
+}
