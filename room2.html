@@ -1,0 +1,45 @@
+<!--this is for room 2 - art-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Room 2</title>
+    </head>
+    <body>
+        <!--items
+        protagonist
+        pigeon
+        art canvas/paper
+        pen
+
+        protagonist enters the art room
+        they see a door and next to it is a small puzzle with a circular piece missing
+        they get a pen (w/button) and draw on the paper (grab it with a button, then draw with a cursor)
+        then they cut it w/ scissors (grab via a button)
+        then they place it in the puzzle with a button, then the door opens
+        -->
+        <div id="room2-scene1">
+            <div id="bgimage-room2">
+                <!--<img src="">-->
+            </div>
+            <div id= "player-room2-scene1">
+                <!--<img src="">-->
+            </div>
+            <p id= "draw-missing-piece">To unlock the door, replace the missing puzzle piece!</p>
+            <button id="create-drawing">Create puzzle piece!</button>
+        </div>
+        <div id="room2-scene2" class="hidden">
+            <canvas id="drawingCanvas" width="400" height="400"></canvas>
+            <button id="finish-drawing">Finish drawing!</button>
+        </div>
+        <div id="room2-scene3" class="hidden">
+            <h2>Placing the piece...</h2>
+            <div id="circlePiece">
+                <!--<img src="">-->
+            </div>
+            <div id="doorAnimation">Door opening...</div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

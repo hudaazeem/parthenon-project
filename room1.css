@@ -1,0 +1,41 @@
+.pianoScreen {
+    height: 500px;
+    width: 800px;
+    background-color: black;
+}
+
+#tile1, #tile2, #tile3, #tile4, #tile5 {
+    position: absolute;
+    left: 0;
+    top: -150;
+}
+
+.button {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#pianoGame {
+    position: relative;
+    width: 650px;
+    height: 600px;
+    border: 1.5px solid rgb(0, 0, 0);
+    background-color: white;
+    overflow: hidden;
+}
+
+#pianoGame img {
+    position: absolute;
+}
