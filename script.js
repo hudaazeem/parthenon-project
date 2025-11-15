@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 var startButton = document.getElementById("start-button");
 var room3 = document.getElementById("room-3");
@@ -5,6 +6,8 @@ var room3 = document.getElementById("room-3");
 // var tile2 = document.getElementById("tile2");
 // var tile3 = document.getElementById("tile3");
 
+=======
+>>>>>>> b8e353edec3c0413a29d907df84dfc2e8a6bfa78
 var room2Scene1=document.getElementById("room2-scene1");
 var room2Scene2=document.getElementById("room2-scene2");
 var room2Scene3=document.getElementById("room2-scene3");
@@ -72,6 +75,7 @@ if(finishDrawing&&canvas&&ctx){
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -92,3 +96,6 @@ if(finishDrawing&&canvas&&ctx){
 //     }
 
 // }
+=======
+ctx.fillStyle="black";
+>>>>>>> b8e353edec3c0413a29d907df84dfc2e8a6bfa78

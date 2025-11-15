@@ -7,7 +7,7 @@
 #tile1, #tile2, #tile3, #tile4, #tile5 {
     position: absolute;
     left: 0;
-    top: -150;
+    top: -150px;
 }
 
 .button {
