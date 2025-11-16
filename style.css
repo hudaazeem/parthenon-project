@@ -41,11 +41,11 @@ body {
 }
 
 .background.index {
-    background-image: url("/imgs/startBackground.png");
+    background-image: url("imgs/startBackground.png");
 }
 
 .background.intro {
-    background-image: url("/imgs/blueBackground.png");
+    background-image: url("imgs/blueBackground.png");
 }
 
 #start-button {
@@ -101,7 +101,7 @@ body {
     position: absolute;
     left: 20px;
     bottom: 0px;
-    background-image: url('/imgs/character.png');
+    background-image: url('imgs/character.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -113,7 +113,7 @@ body {
     position: absolute;
     right: 30px;
     top: 30px;
-    background-image: url('/imgs/pigeonFlapping.gif');
+    background-image: url('imgs/pigeonFlapping.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -154,7 +154,7 @@ body {
 }
 
 .background.room3{
-    background-image: url('/imgs/clayBackground.png');
+    background-image: url('imgs/clayBackground.png');
         background-size: 800px 500px; /* EXACT dimensions */
 }
 /*new thing*/
@@ -187,14 +187,14 @@ body {
 /*new thing*/
 
 #transitionBackground1 {
-    background-image: url('/imgs/musicRoomBackground.png');
+    background-image: url('imgs/musicRoomBackground.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #transitionBackground2 {
-    background-image: url('/imgs/artRoomBackground.png');
+    background-image: url('imgs/artRoomBackground.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -215,7 +215,7 @@ body {
 }
 
 .background.ending {
-    background-image: url('/imgs/endingScene.png');
+    background-image: url('imgs/endingScene.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
