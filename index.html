@@ -5,10 +5,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="title-page">put title of game here</h1>
-    <!--if we have time, maybe add a small animation in the background??-->
-    <!--background image here -->
-    <button id="start-button">Start!</button>
-    <script src="script.js"></script>
-    <a href="./room1.html">room 1</a>
-</body>
+    <div class="background index">
+        <!--if we have time, maybe add a small animation in the background??-->
+        <!--background image here -->
+        <div id="start-button">Start!</div>
+        <div class="button" id="room1button">room 1!</div>
+        <div class="button" id="room2button">room 2!</div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var startButton = document.getElementById("start-button");
+            var room1button = document.getElementById("room1button");
+            var room2button = document.getElementById("room2button");
+
+            if (startButton) {
+                startButton.addEventListener('click', function() {
+                    window.location.href = "intro.html";
+                });
+                room1button.addEventListener('click', function() {
+                    window.location.href = "room1.html";
+                });
+                room2button.addEventListener('click', function() {
+                    window.location.href = "room2.html";
+                });
+            }
+        });
+    </script>
+</body> 

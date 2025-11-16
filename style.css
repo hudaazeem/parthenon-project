@@ -3,7 +3,6 @@ body {
     width:800px;
     height:500px;
     margin: 0 auto;
-    background-color: pink;
 }
 
 .hidden{
@@ -12,6 +11,81 @@ body {
 
 #drawingCanvas{
     border: 2px solid blue;
-    width:400px; 
-    height:400px;
+    width:800px; 
+    height:500px;
+}
+
+.background {
+    height: 500px;
+    width: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: auto;
+    position: relative;
+}
+
+.background.index {
+    background-image: url("/imgs/startBackground.png");
+}
+
+.background.intro {
+    background-image: url("/imgs/apartmentBackground1.png");
+}
+
+#start-button {
+    font-size: 30px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+
+.button {
+    font-size: 30px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    position: absolute;
+}
+#room1button {
+    top: 0px;
+    right: 30px;
+}
+
+#room2button {
+    top: 0px;
+    right: 190px;
+
+}
+
+
+#characterTalking {
+    height: 204px;
+    width: 164px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background-image: url('/imgs/character.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#speechBubble {
+    height: 100px;
+    width: 500px;
+    position: absolute;
+    font-size: 30px;
+    background-color: white;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 20px;
 }

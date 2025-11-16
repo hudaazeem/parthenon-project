@@ -7,7 +7,10 @@
 #tile1, #tile2, #tile3, #tile4, #tile5 {
     position: absolute;
     left: 0;
-    top: -150px;
+    top: -185px;
+    /*animation-name: down;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;*/
 }
 
 .button {
@@ -29,8 +32,8 @@ body {
 
 #pianoGame {
     position: relative;
-    width: 650px;
-    height: 600px;
+    width: 800px;
+    height: 500px;
     border: 1.5px solid rgb(0, 0, 0);
     background-color: white;
     overflow: hidden;
@@ -39,3 +42,13 @@ body {
 #pianoGame img {
     position: absolute;
 }
+
+@keyframes down {
+    0%{transform: translateY(0px);}
+    100%{transform: translateY(820px);}
+}
+
+.animate {
+    animation-name: down;
+    animation-duration: 6s;
+    animation-timing-function: ease-in;}
