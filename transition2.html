@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <title>Transition1 Page</title>
+    </head>
+
+    <body>
+        <div class="background transition" id="transitionBackground2">
+            <p style="position: absolute; left: 10px; right: 10px;">Task 2: Use your mouse pad to try to draw
+                <br>a perfect circle. The higher the accuracy, the better! 
+                <br>You can almost catch the pigeon culprit!
+            </p>
+
+            <div class="button" id="startMiniGame2">Start</div>
+        </div>
+        
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var startMiniGame2 = document.getElementById("startMiniGame2");
+
+            if (startMiniGame2) {
+                startMiniGame2.addEventListener('click', function() {
+                    window.location.href = "room2.html";
+                });
+            }
+        });
+    </script>
+
+</html>

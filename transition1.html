@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <title>Transition1 Page</title>
+    </head>
+
+    <body>
+        <div class="background transition" id="transitionBackground1">
+            <p style="position: absolute; left: 10px; right: 10px;">Task 1: Click your arrow keys and time each note
+                <br>correctly! Then, you'll be one step closer to 
+                <br>getting the family picture back.
+            </p>
+
+            <div class="button" id="startMiniGame1">Start</div>
+        </div>
+        
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var startMiniGame1 = document.getElementById("startMiniGame1");
+
+            if (startMiniGame1) {
+                startMiniGame1.addEventListener('click', function() {
+                    window.location.href = "room1.html";
+                });
+            }
+        });
+    </script>
+
+</html>

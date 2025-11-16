@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <title>Transition 3 Page</title>
+    </head>
+
+    <body>
+        <div class="background transition" id="transitionBackground1">
+            <p style="position: absolute; left: 10px; right: 10px;">Task 3: Sculpt the key to unlock the next room!</p>
+            <div class="button" id="startMiniGame3">Start</div>
+        </div>
+        
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var startMiniGame1 = document.getElementById("startMiniGame3");
+
+            if (startMiniGame1) {
+                startMiniGame1.addEventListener('click', function() {
+                    window.location.href = "room3.html";
+                });
+            }
+        });
+    </script>
+
+</html>

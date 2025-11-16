@@ -163,19 +163,24 @@ if(drawAgain){
 
 function makeDraggable(element) {
     let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    element.addEventListener("mousedown", () => {
+    element.addEventListener("mousedown", (e) => {
         isDragging = true;
+        const rect = element.getBoundingClientRect();
         element.style.cursor = "grabbing";
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+
     });
 
     document.addEventListener("mousemove", (e) => {
         if (!isDragging) return;
-
-        element.style.left = (e.clientX - element.offsetWidth / 2) + "px";
-        element.style.top = (e.clientY - element.offsetHeight / 2) + "px";
-
-        checkClayOnTable(element);
+        var bounds = clayroomScene1.getBoundingClientRect();
+        element.style.left = (e.clientX - bounds.left - element.offsetWidth / 2) + "px";
+        element.style.top = (e.clientY - bounds.top - element.offsetHeight / 2) + "px";
+        checkClayOnTable();
     });
 
     document.addEventListener("mouseup", () => {
@@ -189,27 +194,54 @@ if(clayroomScene1){
     makeDraggable(document.getElementById("clay2"));
     makeDraggable(document.getElementById("clay3"));
 }
+//new thing
+function isOverlapping(a, b) {
+    const r1 = a.getBoundingClientRect();
+    const r2 = b.getBoundingClientRect();
 
-// function checkClayOnTable(clayItem){
-//     var table = document.getElementById("clay-table");
-//     var clayRect = clayItem.getBoundingClientRect();
-//     var tableRect = table.getBoundingClientRect();
+    return !(
+        r1.right < r2.left ||
+        r1.left > r2.right ||
+        r1.bottom < r2.top ||
+        r1.top > r2.bottom
+    );
+}
 
-//     var isTouching = clayRect.right>tableRect.left && clayRect.left < tableRect.right && clayRect.bottom > tableRect.top && clayRect.top < tableRect.bottom;
+function checkClayOnTable() {
+    const clay1 = document.getElementById("clay1");
+    const clay2 = document.getElementById("clay2");
+    const clay3 = document.getElementById("clay3");
+    const table = document.getElementById("clay-table");
+    const key = document.getElementById("key");
 
-//     if(isTouching){
-//         clayItem.style.display="none";
+    const c1 = isOverlapping(clay1, table);
+    const c2 = isOverlapping(clay2, table);
+    const c3 = isOverlapping(clay3, table);
 
-//         clayDropped++
+    
 
-//         if(clayDropped===3){
-//             revealClayKey();
-//         }
-//     }
+    if (c1 && c2 && c3) {
+        var rect = clay1.getBoundingClientRect();
+        var parentRect = clayroomScene1.getBoundingClientRect();
+        const relativeX = rect.left - parentRect.left;
+        const keyHeight = key.getBoundingClientRect().height;
+        const bottomY = parentRect.height - keyHeight-70;        key.style.left = relativeX + "px";
+        key.style.top = bottomY + "px";
 
-// }
+        key.classList.remove("hidden");
+        clay1.style.display = "none";
+        clay2.style.display = "none";
+        clay3.style.display = "none";
+    } 
+}
 
-// function revealClayKey() {
-//     var table = document.getElementById("clay-table");
-//     table.innerHTML = '<img src="imgs/clayKey.png">';
-// }
+var key = document.getElementById("key");
+
+if (key) {
+    key.addEventListener("click", function() {
+        window.location.href = "ending.html";
+    })
+}
+
+
+//new thing (ended)

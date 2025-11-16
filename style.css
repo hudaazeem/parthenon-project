@@ -4,6 +4,7 @@ body {
     height:500px;
     margin: 0 auto;
     font-family: "playpen sans";
+    position:relative;
 }
 
 .hidden{
@@ -15,7 +16,20 @@ body {
     width:800px; 
     height:500px;
 }
+#room2-scene2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px; /* match the canvas height or the container's available height */
+}
 
+#drawingCanvas {
+    display: block;
+    margin: 0 auto;    /* horizontal centering fallback */
+    max-width: 100%;   /* responsive safety */
+    height: auto;      /* keeps aspect ratio if scaled */
+}
 .background {
     height: 500px;
     width: 800px;
@@ -55,6 +69,7 @@ body {
     width: 100px;
     position: absolute;
 }
+
 #room1button {
     top: 0px;
     right: 30px;
@@ -63,7 +78,20 @@ body {
 #room2button {
     top: 0px;
     right: 190px;
+}
 
+#nextSpeech {
+    top: 10px;
+    left: 10px;
+}
+
+#startMiniGame1 {
+    top: 150px;
+    left: 10px;
+}
+#startMiniGame2 {
+    top: 10px;
+    right: 10px;
 }
 
 
@@ -127,4 +155,84 @@ body {
 
 .background.room3{
     background-image: url('/imgs/clayBackground.png');
+        background-size: 800px 500px; /* EXACT dimensions */
+}
+/*new thing*/
+#key {
+    position: absolute;
+    left: 350px;
+    top: 100px; 
+    cursor: pointer;
+}
+
+#key img{
+    width: 70%;
+    pointer-events: none;
+}
+
+#clay-table {
+    position: absolute;
+    left: 250px;
+    top: 300px;
+    width: 300px;
+    height: 120px;
+    background-color: rgba(165, 123, 87, 0); /* Debug color */
+}
+
+#clay1 { left: 80px; top: 120px; }
+#clay2 { left: 200px; top: 130px; }
+#clay3 { left: 320px; top: 110px; }
+
+
+/*new thing*/
+
+#transitionBackground1 {
+    background-image: url('/imgs/musicRoomBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#transitionBackground2 {
+    background-image: url('/imgs/artRoomBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#game {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: pink; /* temp debug */
+}
+
+.background .index{
+    align-items: center; 
+    justify-content: center;
+}
+
+.background.ending {
+    background-image: url('/imgs/endingScene.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#room2-scene2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px; /* match the canvas height or the container's available height */
+}
+
+#drawingCanvas {
+    display: block;
+    margin: 0 auto;    /* horizontal centering fallback */
+    max-width: 100%;   /* responsive safety */
+    height: auto;      /* keeps aspect ratio if scaled */
 }

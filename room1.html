@@ -2,16 +2,18 @@
 <!DOCTYPE html>
 <html>
     <head><link rel="stylesheet" href="room1.css"></head>
-    <body >
-        <div id="Room">
-        </div>
-        <button id="startBtn" class="button" onclick="startGame()">Start Game</button>
+    <body>
+        
         <div id="pianoGame">
+            <h3 id="scoreTxt">Score: 0</h3>
+            <button id="startBtn" class="button" onclick="startGame()">Start Game</button>    
+            <button id="transition" class="button" style='display: none;' onclick="window.location.href='transition2.html';">Go to Next Room</button>        
             <img id="tile1" src="imgs/tile.png">
             <img id="tile2" src="imgs/tile.png">
             <img id="tile3" src="imgs/tile.png">
-            <!--<img id="tile4" src="imgs/tile.png">
-            <img id="tile5" src="imgs/tile.png">-->
+            <img id="tile4" src="imgs/tile.png">
+            <img id="tile5" src="imgs/tile.png">
+            <div id="hitZone"></div>
         </div>
         <script src="room1.js"></script>
     </body> 
