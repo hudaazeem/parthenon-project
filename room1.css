@@ -45,10 +45,10 @@ body {
 
 @keyframes down {
     0%{transform: translateY(0px);}
-    100%{transform: translateY(820px);}
+    100%{transform: translateY(730px);}
 }
 
 .animate {
     animation-name: down;
-    animation-duration: 6s;
+    animation-duration: 3s;
     animation-timing-function: ease-in;}

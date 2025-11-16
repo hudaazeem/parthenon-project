@@ -3,6 +3,7 @@ body {
     width:800px;
     height:500px;
     margin: 0 auto;
+    font-family: "playpen sans";
 }
 
 .hidden{
@@ -30,7 +31,7 @@ body {
 }
 
 .background.intro {
-    background-image: url("/imgs/apartmentBackground1.png");
+    background-image: url("/imgs/blueBackground.png");
 }
 
 #start-button {
@@ -71,21 +72,59 @@ body {
     width: 164px;
     position: absolute;
     left: 20px;
-    bottom: 20px;
+    bottom: 0px;
     background-image: url('/imgs/character.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+#pigeonFlapping {
+    height: 175px;
+    width: 175px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background-image: url('/imgs/pigeonFlapping.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: pigeonFlapping 4s ease-in-out 0s infinite;
+}
+
+@keyframes pigeonFlapping {
+    0%{top: 30px;}
+    50%{top: 60px;}
+    100%{top: 30px;}
+}
+
 #speechBubble {
     height: 100px;
     width: 500px;
     position: absolute;
-    font-size: 30px;
+    font-size: 20px;
     background-color: white;
     bottom: 20px;
     right: 20px;
     padding: 20px;
     border-radius: 20px;
+}
+
+#clay1, #clay2, #clay3 {
+    position: absolute;
+    cursor: grab;
+}
+
+.clay {
+    position: absolute;
+    cursor: grab;
+}
+
+.clay img {
+    pointer-events: none;
+    height: 100px;
+}
+
+.background.room3{
+    background-image: url('/imgs/clayBackground.png');
 }

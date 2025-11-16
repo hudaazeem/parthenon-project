@@ -17,14 +17,22 @@ var room2Scene3=document.getElementById("room2-scene3");
 var room2Scene4=document.getElementById("room2-scene4");
 var createDrawing = document.getElementById("create-drawing");
 var canvas = document.getElementById("drawingCanvas");
-var ctx = canvas.getContext("2d");
+if(canvas){
+    var ctx = canvas.getContext("2d");
+}   
 var finishDrawing = document.getElementById("finish-drawing");
 var drawnPixels=[];
+
 
 var door = document.getElementById("doorAnimation");
 var drawAgain = document.getElementById("draw-again");
 
 var doorToRoom3 = document.getElementById("move-to-room-3");
+
+var clayroomScene1 = document.getElementById("clayroom-scene1");
+var clayroomScene2 = document.getElementById("clayroom-scene2");
+
+var clayDropped = 0;
 if (room3) {
     room3.addEventListener('click', function() {
         window.location.href = "room3.html";
@@ -152,3 +160,56 @@ if(drawAgain){
         ctx.stroke();
     })
 }
+
+function makeDraggable(element) {
+    let isDragging = false;
+
+    element.addEventListener("mousedown", () => {
+        isDragging = true;
+        element.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        element.style.left = (e.clientX - element.offsetWidth / 2) + "px";
+        element.style.top = (e.clientY - element.offsetHeight / 2) + "px";
+
+        checkClayOnTable(element);
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+        element.style.cursor = "grab";
+    });
+}
+
+if(clayroomScene1){
+    makeDraggable(document.getElementById("clay1"));
+    makeDraggable(document.getElementById("clay2"));
+    makeDraggable(document.getElementById("clay3"));
+}
+
+// function checkClayOnTable(clayItem){
+//     var table = document.getElementById("clay-table");
+//     var clayRect = clayItem.getBoundingClientRect();
+//     var tableRect = table.getBoundingClientRect();
+
+//     var isTouching = clayRect.right>tableRect.left && clayRect.left < tableRect.right && clayRect.bottom > tableRect.top && clayRect.top < tableRect.bottom;
+
+//     if(isTouching){
+//         clayItem.style.display="none";
+
+//         clayDropped++
+
+//         if(clayDropped===3){
+//             revealClayKey();
+//         }
+//     }
+
+// }
+
+// function revealClayKey() {
+//     var table = document.getElementById("clay-table");
+//     table.innerHTML = '<img src="imgs/clayKey.png">';
+// }

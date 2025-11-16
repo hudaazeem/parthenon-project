@@ -1,13 +1,40 @@
-<!--this is for room 3 - dancing-->
+<!--this is for ctual room 1 - sculptures-->
 
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <title>Room 3</title>
     </head>
-    <body>
+    <body class="background room3">
+        <div id="clayroom-scene1">
+            <div id="clay1" class="clay">
+                <img src="imgs/clayBall.png">
+            </div>
+            <div id="clay2" class="clay">
+                <img src="imgs/clayBall.png">
+            </div>
+            <div id="clay3" class="clay">
+                <img src="imgs/clayBall.png">
+            </div>
+            <div id="clay-table" >
+            </div>
+        </div>
+        <div id="clayroom-scene2" class="hidden">
+            <div id="bakingSlider">
+                <input type="range" min="0" max="100" value="50" step="1">
+            </div>
+        </div>
+            
         <script src="script.js"></script>
-        <div>HIIIIII ROOM 3</div>
     </body>
 </html>
+
+<!--things to do 
+        slider for baking properly
+        determines the right temperature 
+
+
+        feature where the user drags different balls of clay
+        -->

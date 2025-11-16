@@ -1,21 +1,40 @@
 const tile1 = document.getElementById("tile1");
 const tile2 = document.getElementById("tile2");
 const tile3 = document.getElementById("tile3");
-/*const tile4 = document.getElementById("tile4");
-const tile5 = document.getElementById("tile5");*/
+const tile4 = document.getElementById("tile4");
+const tile5 = document.getElementById("tile5");
 const btn = document.getElementById("startBtn");
-let positions = {1: 100, 2:325, 3: 540};
-let height = {1: -450, 2: -400, 3:-350, 4: -300, 5:-180, 6:-325};
-let tiles = [tile1, tile2, tile3];
-let tileInPlace = [false, false, false];
+let xPos = {1: 100, 2: 325, 3: 545};
+let yPos = {1: -210, 2: -260, 3: -240, 4: -185, 5: -175, 6: -225};
+let heightTaken = [false, false, false, false, false, false];
+let tiles = [tile1, tile2, tile3, tile4, tile5];
+let tileInPlace = [false, false, false, false, false];
 let time = Date.now();
 const rounds = 10;
+let coords = [];
 
 function randomizeTilePosition(tile){
-    const index = Math.floor(Math.random() * 3) + 1; // 1..3
-    tile.style.left = positions[index] + "px";
-    const yIndex = Math.floor(Math.random() * 5) + 1; // 1..4
-    tile.style.top = height[yIndex] + "px";
+    const maxAttempts = 50;
+    let attempts = 0;
+    let coordStr;
+    let xIndex, yIndex;
+
+    do {
+        xIndex = Math.floor(Math.random() * 3) + 1;    
+        yIndex = Math.floor(Math.random() * 6) + 1;    
+        coordStr = `${xPos[xIndex]},${yPos[yIndex]}`;
+        attempts++;
+        if (attempts >= maxAttempts) {
+            break;
+        }
+    } while (coords.includes(coordStr));
+
+    tile.style.left = xPos[xIndex] + "px";
+    tile.style.top = yPos[yIndex] + "px";
+
+    if (!coords.includes(coordStr)) {
+        coords.push(coordStr);
+    }
 }
 
 function restartAnimation(tile){
@@ -33,7 +52,6 @@ tiles.forEach(tile => {
 });
 
 function startGame(){
-    // add the class to start the animations
     tiles.forEach(tile => tile.classList.add("animate"));
-    btn.innerHTML = "Running";
+    if (btn) btn.innerHTML = "Running";
 }
